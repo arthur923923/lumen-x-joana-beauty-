@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 1px 15px 15px -1px rgba(112, 5, 64, 0.53);
+}
+.joa img{
+    width: 120px;
+    height: auto;
+}
+nav{
+    display: flex;
+    gap: 30px;
+}
+nav a{
+    text-decoration: none;
+    color: #b75e64;
+    font-size: 45px;
+}
+.banner2{
+    background-image: url("./imagens/banner2.jpg");
+    background-size: cover; 
+    height: 600px;
+}
+.pedro {
+    font-size: 45px;        
+    padding-left: 30px;
+    color: #b75e64;
+}
+.pedro p{
+    color: #b75e64;
+    width: 50%;
+    font-size: 25px;   
+}
+.cards{
+    display: flex;          /* Coloca os cards lado a lado */
+    justify-content: center;
+    gap: 70px;              /* Espaço entre os cards */
+    margin-top: 50px;
+}
+.you{
+    text-align: center;
+    color: #b75e64;
+    margin-top: 20px;
+    font-size: 55px;
+}
+
+.card{
+    width: 350px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px 10px 5px 0px rgba(82,45,75,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(82,45,75,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(82,45,75,0.75);
+    text-align: center;
+}
+
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3{
+    margin: 15px 0;
+    color: #b75e64;
+    font-size: 25px;
+}
+
+.card p{
+    padding: 0 20px 20px;
+}
+.banner1{
+    height: 400px;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    margin-top: 36px;
+    background-image: url("./imagens/banner2.jpg");
+    background-size: cover;
+}
+
+.textos{
+    max-width: 500px;
+    color: #c85b63; /* rosa elegante */
+}
+
+.textos h1{
+    font-size: 65px;
+    margin-bottom: 30px;
+}
+
+.textos p{
+    font-size: 26px;
+    margin-bottom: 30px;
+
+}
+
+.botoes{
+    display: flex;
+    gap: 15px;
+}
+
+.botoes a{
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* botão rosa claro */
+.btn1{
+    background: #f3a6ad;
+    color: white;
+}
+
+.btn1:hover{
+    background: #e58c95;
+}
+
+/* botão rosa escuro */
+.btn2{
+    background: #c85b63;
+    color: white;
+}
+
+.btn2:hover{
+    background: #a9444d;
+}
+
+footer {
+    background-color: #b75e64; /* tom rosa escuro */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #fce4ec; /* rosa claro para contraste */
+}
+
+footer p, 
+footer a {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1.6;
+}
+
+footer a:hover {
+    color: #f3a6ad; /* efeito hover rosa claro */
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+footer .social-icons a {
+    background: #f3a6ad;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+footer .social-icons a:hover {
+    background: #fff;
+    color: #b75e64;
+}
+
+footer .copy {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #fce4ec;
+}
