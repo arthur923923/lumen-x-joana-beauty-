@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #ffffff;
+    box-shadow: 1px 15px 15px -1px rgba(112, 5, 64, 0.53);
+}
+.joa img{
+    width: 180px;
+    height: auto;
+}
+nav{
+    display: flex;
+    gap: 30px;
+}
+nav a{
+    text-decoration: none;
+    color: #b75e64;
+    font-size: 45px;
+}
+.banner2{
+    background-image: url("./imagens/banner2.jpg");
+    background-size: cover; 
+
+    display: flex;
+    justify-content: end;
+}
+.pedro {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-size: 15px;        
+    color: #b75e64;
+}
+.pedro p{
+    margin: 10px 10px;
+    display: flex;
+    justify-content: end;
+    color: #000000;
+    font-size: 20px;   
+}
