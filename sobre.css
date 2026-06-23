@@ -24,24 +24,139 @@ nav a{
     color: #b75e64;
     font-size: 45px;
 }
-.banner2{
-    background-image: url("./imagens/banner2.jpg");
-    background-size: cover; 
-
-    display: flex;
-    justify-content: end;
+.banner2 img{
+    width: 100%;
+    height: 40%;
 }
-.pedro {
+.banner2 button{
+
+}
+#container-historia {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.medio-historia {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    font-size: 15px;        
-    color: #b75e64;
+    gap: 40px;
+    width: 450px;
+    padding-right: 40px;
 }
-.pedro p{
-    margin: 10px 10px;
+.medio{
+    border-right:solid 3px pink ;
+    
+}
+h2 {
+    text-align: center;
+    color: #b76b73;
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.hidtoria-pequeno h3 {
+    color: #b76b73;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.hidtoria-pequeno p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.img-historia {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fbecee;
     display: flex;
-    justify-content: end;
-    color: #000000;
-    font-size: 20px;   
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -20px;
+}
+
+.img-historia img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.hidtoria-pequeno {
+    margin-left: 10px;
+}
+#container-finalHISTORIA{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ebc3c3;
+    padding: 50px;
+}
+
+.containerpequeno-finalHISTORIA{
+    width: 300px;
+}
+
+.containerpequeno-finalHISTORIA h3{
+    color: #b76b73;
+}
+
+.containerpequeno-finalHISTORIA:first-child > h3{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.final-historia{
+    margin-bottom: 30px;
+}
+
+.final-img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fbecee;
+    float: left;
+    margin-right: 15px;
+}
+
+.final-img img{
+    width: 40px;
+    height: 40px;
+    margin: 15px;
+}
+
+.final-historia h3{
+    font-size: 24px;
+    color: #b76b73;
+    margin-bottom: 5px;
+}
+
+.final-historia p{
+    color: #555;
+    font-size: 16px;
+}
+
+#imgfinalH img{
+    width: 320px;
+    border-radius: 25px;
+}
+
+.containerpequeno-finalHISTORIA:last-child{
+    text-align: left;
+}
+
+.containerpequeno-finalHISTORIA:last-child p{
+    font-size: 70px;
+    color: #d8a5aa;
+    margin: 0;
+}
+
+.containerpequeno-finalHISTORIA:last-child h3{
+    font-size: 32px;
+    color: #b76b73;
+    line-height: 50px;
 }
