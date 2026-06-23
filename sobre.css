@@ -24,12 +24,62 @@ nav a{
     color: #b75e64;
     font-size: 45px;
 }
-.banner2 img{
+.banner2 {
+    background-image: url(./imagens/banner\ historia\ 2.jpeg);
     width: 100%;
-    height: 40%;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    flex-direction: column;
+    padding: 40px;
+    margin-bottom: 60px;
+    -webkit-box-shadow: 1px 9px 50px 3px #CA5771; 
+box-shadow: 1px 9px 50px 3px #CA5771;
+}
+#bannerP{
+    width: 43%;
+}
+
+.banner2 h2{
+    font-size: 40px;
+    text-align: left;
+    color: #000000;
+}
+.banner2 h1{
+    padding-right: 30px;
+    font-size: 100px;
+    color: #570d0d;
+    border-bottom: solid 3px;
+    padding-bottom: 30px;
+}
+.banner2 h3 {
+    font-size: 32px;
+    text-align: left;
+    padding-right: 60px;
+    padding-top: 30px;
+    color: #b75e64;
+}
+.banner2 p{
+    font-size: 18px;
+    text-align: left;
+    padding: 20px 0;
 }
 .banner2 button{
+    background-color: #dd6d75;
+    border-radius: 10px;
+    padding: 14px;
+    color: #fbecee;
+    border: solid 1px rgb(168, 168, 168);
 
+}
+button:hover{
+    background-color: #c45d62;
+    color: aliceblue;
+    transform: translateY(-2px);
+}
+button:active{
+    transform: scale(0.90);
+    background-color: #df6d6d;
 }
 #container-historia {
     display: flex;
