@@ -4,25 +4,35 @@
     padding: 0%;
 }
 header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: #ffffff;
-    box-shadow: 1px 15px 15px -1px rgba(112, 5, 64, 0.53);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:#fff;
+    box-shadow:1px 15px 15px -1px rgba(112,5,64,.53);
 }
+
 .joa img{
-    width: 180px;
-    height: auto;
+    width:120px;
+    height:auto;
 }
+
 nav{
-    display: flex;
-    gap: 30px;
+    display:flex;
+    gap:30px;
 }
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
 nav a{
-    text-decoration: none;
-    color: #b75e64;
-    font-size: 45px;
+    text-decoration:none;
+    color:#b75e64;
+    font-size:39px;
+    font-weight:500;
 }
 .banner2 {
     background-image: url(./imagens/banner\ historia\ 2.jpeg);
