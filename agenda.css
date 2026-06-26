@@ -1,8 +1,27 @@
-*{
-    box-sizing: border-box;
-    margin: 0%;
-    padding: 0%;
-}
+:root { /* Variáveis globais de cores para facilitar a manutenção */
+            --cor-primaria: #bb4b69; /* Cor vermelho/rosado principal (botões, títulos) */
+            --cor-primaria-hover: #9c3c55; /* Cor mais escura para quando o mouse passar por cima */
+            --cor-fundo: #fcf5f6; /* Cor de fundo principal bem clara */
+            --cor-fundo-cards: #ffffff; /* Cor branca para o fundo dos formulários */
+            --cor-texto-escuro: #4a3b3e; /* Cor escura para textos normais */
+            --cor-texto-claro: #8c7b7e; /* Cor mais clara para textos secundários */
+            --cor-borda: #f0e1e4; /* Cor para bordas das caixas de texto e calendário */
+            --fonte-titulo: 'Playfair Display', serif; /* Fonte serifada para elegância */
+            --fonte-texto: 'Lato', sans-serif; /* Fonte sem serifa para facilitar a leitura */
+            --fonte-detalhe: 'Great Vibes', cursive; /* Fonte cursiva para o detalhe no rodapé */
+        }
+
+        * { /* Reseta margens e preenchimentos de todos os elementos */
+            margin: 0; /* Remove margem padrão */
+            padding: 0; /* Remove preenchimento padrão */
+            box-sizing: border-box; /* Garante que bordas não aumentem o tamanho final dos elementos */
+        }
+
+        body { /* Estilos gerais do corpo da página */
+            font-family: var(--fonte-texto); /* Aplica a fonte padrão de texto */
+            background-color: var(--cor-fundo); /* Aplica a cor de fundo rosinha clara */
+            color: var(--cor-texto-escuro); /* Define a cor do texto principal */
+        }
 header{
     display:flex;
     justify-content:space-between;
@@ -34,99 +53,569 @@ nav a{
     font-size:39px;
     font-weight:500;
 }
-body{
-    background:#fff8f8;
-}
-.banner{
-    width:100%;
-    height:350px;
-    background:url("banner-agenda.jpg");
-    background-size:cover;
-    background-position:center;
-}
-.titulo{
-    text-align:center;
-    margin:50px 0;
-}
-.titulo h1{
-    color:#b85d6a;
-    font-size:3rem;
-}
-.titulo p{
-    color:#666;
-    margin-top:10px;
-}
-.container{
-    width:80%;
-    max-width:1000px;
-    margin:auto;
-}
-.formulario{
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    margin-bottom:50px;
-}
-.formulario h2{
-    color:#b85d6a;
-    margin-bottom:25px;
-}
-.grupo{
-    display:flex;
-    gap:20px;
-    margin-bottom:20px;
-}
-.campo{
-    flex:1;
-    display:flex;
-    flex-direction:column;
-}
-label{
-    margin-bottom:8px;
-    color:#444;
-    font-weight:bold;
-}
-input,
-select,
-textarea{
-    padding:12px;
-    border:1px solid #ddd;
-    border-radius:10px;
-}
-textarea{
-    resize:none;
-    height:120px;
-}
-.botao{
-    text-align:center;
-}
-button{
-    background:#c86d7a;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:30px;
-    font-size:1rem;
-    cursor:pointer;
-    transition:.3s;
-}
-button:hover{
-    background:#b05b67;
-}
-.info{
-    margin-top:30px;
-    background:#fdeff1;
-    padding:25px;
-    border-radius:15px;
-}
+        /* ================= BANNER ================= */
+        .banner { /* Seção do banner principal */
+            display: flex; /* Usa flexbox para colocar texto na esquerda e imagem na direita */
+            background: linear-gradient(to right, #fdf6f7 50%, #f6dadd 100%); /* Fundo em degradê para mesclar com a imagem */
+            min-height: 400px; /* Altura mínima do banner */
+            position: relative; /* Posição relativa para posicionar elementos internos se precisar */
+            overflow: hidden; /* Esconde o que passar dos limites da caixa */
+        }
 
-.info h3{
-    color:#b85d6a;
-    margin-bottom:10px;
-}
+        .banner-content { /* Parte do texto dentro do banner */
+            flex: 1; /* Ocupa metade do espaço disponível */
+            padding: 60px 10%; /* Espaçamento interno (topo/baixo e laterais) */
+            display: flex; /* Transforma em container flexível */
+            flex-direction: column; /* Coloca os elementos um embaixo do outro */
+            justify-content: center; /* Centraliza os itens verticalmente */
+        }
 
-.info p{
-    color:#555;
-    line-height:1.6;
-}
+        .banner h1 { /* Estilo do título principal no banner */
+            font-family: var(--fonte-titulo); /* Usa a fonte elegante */
+            font-size: 3.5rem; /* Tamanho grande da fonte */
+            color: var(--cor-primaria); /* Cor principal vinho/rosada */
+            line-height: 1.2; /* Espaçamento entre as linhas do título */
+            margin-bottom: 10px; /* Espaço abaixo do título */
+        }
+
+        .banner-divider { /* Divisor com o coraçãozinho abaixo do título */
+            display: flex; /* Container flexível */
+            align-items: center; /* Centraliza verticalmente o ícone */
+            gap: 10px; /* Espaço entre o ícone e outras coisas, se houver */
+            margin-bottom: 20px; /* Espaço abaixo do divisor */
+            color: var(--cor-primaria); /* Cor do ícone de coração */
+            font-size: 0.8rem; /* Tamanho do ícone */
+        }
+
+        .banner p { /* Estilo do texto explicativo no banner */
+            font-size: 1.1rem; /* Tamanho do texto */
+            color: var(--cor-texto-escuro); /* Cor do texto */
+            max-width: 400px; /* Largura máxima para não ficar muito esticado */
+            line-height: 1.5; /* Espaçamento entre linhas do texto */
+        }
+
+        .banner-image { /* Div que guarda a imagem da direita no banner */
+            flex: 1; /* Ocupa a outra metade do banner */
+            background-image: url(./imagens/banner\ agenda\ \(2\).png); /* Imagem de salão genérica para o exemplo */
+            background-size: cover; /* Faz a imagem cobrir todo o espaço */
+            background-position: center; /* Centraliza a imagem na caixa */
+            border-top-left-radius: 200px; /* Arredonda o canto superior esquerdo (efeito visual) */
+            border-bottom-left-radius: 200px; /* Arredonda o canto inferior esquerdo */
+        }
+
+        /* ================= SEÇÃO PRINCIPAL (AGENDA E FORM) ================= */
+        .main-section { /* Container que envolve o agendamento */
+            padding: 60px 5%; /* Espaçamento interno da seção (topo/baixo e laterais) */
+            max-width: 1200px; /* Largura máxima para não esticar muito em telas gigantes */
+            margin: 0 auto; /* Centraliza a seção na tela */
+        }
+
+        .section-title-container { /* Container do título "Escolha sua data..." */
+            text-align: center; /* Centraliza o texto */
+            margin-bottom: 40px; /* Espaçamento abaixo do título */
+        }
+
+        .section-title { /* Estilo do título da seção de agendamento */
+            font-family: var(--fonte-titulo); /* Fonte serifada */
+            font-size: 2rem; /* Tamanho da fonte */
+            color: var(--cor-primaria); /* Cor principal */
+        }
+
+        .section-divider { /* Coraçãozinho centralizado embaixo do título da seção */
+            color: var(--cor-primaria); /* Cor do ícone */
+            font-size: 0.8rem; /* Tamanho do ícone */
+            margin-top: 5px; /* Espaço acima do ícone */
+        }
+
+        .booking-grid { /* Grid que divide o calendário e o formulário lado a lado */
+            display: grid; /* Ativa o display grid (tabela/grade) */
+            grid-template-columns: 1fr 1fr; /* Cria duas colunas de tamanhos iguais (1 fração cada) */
+            gap: 30px; /* Espaço entre as duas colunas */
+        }
+
+        .card { /* Estilo comum para as duas caixas brancas (calendário e form) */
+            background-color: var(--cor-fundo-cards); /* Fundo branco */
+            border-radius: 15px; /* Bordas arredondadas suaves */
+            padding: 40px; /* Espaçamento interno */
+            box-shadow: 0 10px 30px rgba(187, 75, 105, 0.05); /* Sombra suave para destacar do fundo */
+            border: 1px solid var(--cor-borda); /* Borda clarinha */
+        }
+
+        .card-header { /* Cabeçalho de cada card ("Selecione a data" ou "Seus dados") */
+            display: flex; /* Usa flexbox para colocar ícone e texto lado a lado */
+            align-items: center; /* Centraliza verticalmente o ícone e o texto */
+            gap: 15px; /* Espaço entre ícone e texto */
+            margin-bottom: 25px; /* Espaço abaixo do cabeçalho */
+        }
+
+        .card-header i { /* Ícones no título do card */
+            font-size: 1.5rem; /* Tamanho do ícone */
+            color: var(--cor-primaria); /* Cor do ícone */
+        }
+
+        .card-header h3 { /* Título do card */
+            font-family: var(--fonte-titulo); /* Fonte serifada */
+            font-size: 1.5rem; /* Tamanho da fonte */
+            color: var(--cor-primaria); /* Cor do texto */
+        }
+
+        /* ----- CALENDÁRIO ----- */
+        .calendar-nav { /* Barra de navegação do mês (Maio 2024, setinhas) */
+            display: flex; /* Flexbox para organizar os itens na linha */
+            justify-content: space-between; /* Espalha os itens (seta, texto, seta) */
+            align-items: center; /* Alinha no centro vertical */
+            margin-bottom: 20px; /* Espaço abaixo */
+            font-weight: bold; /* Texto em negrito */
+            color: var(--cor-primaria); /* Cor principal */
+        }
+        
+        .calendar-nav i { /* Setinhas de passar o mês */
+            cursor: pointer; /* Muda o mouse para uma mãozinha ao passar por cima */
+        }
+
+        .calendar-grid { /* Grade dos dias do calendário */
+            display: grid; /* Usa grid para organizar os dias da semana */
+            grid-template-columns: repeat(7, 1fr); /* 7 colunas do mesmo tamanho (uma para cada dia da semana) */
+            gap: 10px; /* Espaço entre os números/dias */
+            text-align: center; /* Centraliza os números */
+            margin-bottom: 30px; /* Espaço abaixo do calendário inteiro */
+        }
+
+        .day-name { /* Estilo das letras (Dom, Seg, Ter...) */
+            font-size: 0.85rem; /* Letra menorzinha */
+            color: var(--cor-texto-claro); /* Cor mais apagada */
+            font-weight: bold; /* Negrito */
+            margin-bottom: 10px; /* Espaço abaixo do nome do dia */
+        }
+
+        .day-number { /* Estilo dos números do calendário */
+            width: 35px; /* Largura fixa para formar um círculo perfeito se selecionado */
+            height: 35px; /* Altura fixa */
+            display: flex; /* Flexbox para centralizar o número dentro da caixinha */
+            align-items: center; /* Centraliza vertical */
+            justify-content: center; /* Centraliza horizontal */
+            margin: auto; /* Garante que fique no centro da sua célula na grade */
+            border-radius: 50%; /* Arredonda totalmente para formar um círculo */
+            cursor: pointer; /* Mouse de mãozinha (clicável) */
+            transition: all 0.2s ease; /* Efeito suave ao passar o mouse ou selecionar */
+        }
+
+        .day-number.disabled { /* Estilo para dias que não podem ser clicados (mês anterior/próximo) */
+            color: #ccc; /* Cor cinza clara */
+            cursor: default; /* Mouse padrão (seta) */
+        }
+
+        .day-number:not(.disabled):hover { /* Efeito ao passar o mouse em dias válidos */
+            background-color: var(--cor-borda); /* Fundo cinza clarinho */
+        }
+
+        .day-number.selected { /* Estilo do dia que o usuário clicou (ex: dia 7) */
+            background-color: var(--cor-primaria); /* Fundo rosa forte */
+            color: white; /* Letra branca para dar contraste */
+        }
+
+        /* ----- HORÁRIOS ----- */
+        .time-grid { /* Grade dos botões de horário */
+            display: grid; /* Ativa grid */
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas de horários */
+            gap: 10px; /* Espaçamento entre botões */
+            margin-bottom: 20px; /* Espaço abaixo da grade */
+        }
+
+        .time-btn { /* Estilo padrão do botão de horário */
+            padding: 10px; /* Espaço interno do botão */
+            border: 1px solid var(--cor-primaria); /* Borda rosa fina */
+            border-radius: 25px; /* Botão arredondado (pílula) */
+            background: transparent; /* Fundo transparente */
+            color: var(--cor-primaria); /* Texto rosa */
+            font-family: var(--fonte-texto); /* Fonte sem serifa */
+            font-weight: 600; /* Texto um pouco mais grosso */
+            cursor: pointer; /* Mouse de mãozinha */
+            transition: all 0.2s; /* Efeito suave ao interagir */
+        }
+
+        .time-btn:hover:not(.unavailable) { /* Efeito passar mouse no botão disponível */
+            background-color: #fdf0f3; /* Fundo rosinha bem claro */
+        }
+
+        .time-btn.selected { /* Horário que o cliente escolheu e clicou */
+            background-color: var(--cor-primaria); /* Fundo rosa forte */
+            color: white; /* Texto branco */
+        }
+
+        .time-btn.unavailable { /* Horários que já estão ocupados (desativados) */
+            border-color: #e0e0e0; /* Borda cinza clara */
+            color: #b0b0b0; /* Texto cinza claro */
+            background-color: #f9f9f9; /* Fundo meio cinza */
+            cursor: not-allowed; /* Mouse de "proibido" */
+        }
+
+        .legend { /* Legenda de cores abaixo dos horários */
+            display: flex; /* Coloca os itens em linha */
+            gap: 20px; /* Espaço entre os itens da legenda */
+            font-size: 0.85rem; /* Texto pequeno */
+            color: var(--cor-texto-claro); /* Cor do texto da legenda */
+        }
+
+        .legend-item { /* Cada item da legenda (ex: "bolinha Disponível") */
+            display: flex; /* Alinha bolinha e texto horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            gap: 5px; /* Espaço entre bolinha e texto */
+        }
+
+        .dot { /* A bolinha da legenda */
+            width: 12px; /* Largura da bolinha */
+            height: 12px; /* Altura da bolinha */
+            border-radius: 50%; /* Transforma em círculo perfeito */
+        }
+
+        .dot.available { background-color: var(--cor-primaria); opacity: 0.5; } /* Bolinha rosa claro (disponível) */
+        .dot.unavailable { background-color: #e0e0e0; } /* Bolinha cinza (indisponível) */
+
+        /* ----- FORMULÁRIO ----- */
+        .form-group { /* Caixa que agrupa uma label (rótulo) e um input (campo) */
+            margin-bottom: 20px; /* Espaço entre os campos do formulário */
+        }
+
+        .form-group label { /* O textinho que fica em cima do campo (ex: Nome Completo) */
+            display: block; /* Força o rótulo a ficar em uma linha inteira e empurrar o input pra baixo */
+            margin-bottom: 8px; /* Espaço entre o rótulo e a caixa de input */
+            font-size: 0.9rem; /* Tamanho do rótulo */
+            color: var(--cor-texto-escuro); /* Cor do rótulo */
+            font-weight: bold; /* Texto em negrito */
+        }
+
+        .form-control { /* Estilo das caixas de input, select e textarea */
+            width: 100%; /* Faz o campo ocupar 100% da largura da sua coluna */
+            padding: 12px 15px; /* Preenchimento interno (altura e laterais) */
+            border: 1px solid var(--cor-borda); /* Borda cinza clarinha */
+            border-radius: 8px; /* Cantos arredondados */
+            font-family: var(--fonte-texto); /* Fonte sem serifa */
+            color: var(--cor-texto-escuro); /* Cor da letra dentro da caixa */
+            outline: none; /* Remove contorno azul padrão de navegadores ao clicar */
+            transition: border-color 0.2s; /* Efeito suave ao clicar na caixa */
+        }
+
+        .form-control:focus { /* Quando o usuário clica dentro da caixa de texto */
+            border-color: var(--cor-primaria); /* A borda fica rosa para mostrar foco */
+        }
+
+        textarea.form-control { /* Configurações específicas para o campo de observações grande */
+            resize: vertical; /* Permite que o usuário aumente a caixa apenas na altura, não na largura */
+            min-height: 100px; /* Altura inicial do campo de observação */
+        }
+
+        .btn-submit { /* Botão grande de "Confirmar Agendamento" */
+            width: 100%; /* Ocupa toda a largura do form */
+            background-color: var(--cor-primaria); /* Fundo vermelho/rosa */
+            color: white; /* Texto branco */
+            border: none; /* Sem borda */
+            padding: 15px; /* Bastante espaço interno para ficar um botão grande e clicável */
+            border-radius: 8px; /* Cantos arredondados iguais ao form */
+            font-size: 1rem; /* Tamanho do texto */
+            font-weight: bold; /* Texto em negrito */
+            cursor: pointer; /* Mouse de mãozinha */
+            transition: background-color 0.2s; /* Efeito suave de cor ao passar o mouse */
+            display: flex; /* Flexbox para colocar ícone ao lado do texto */
+            justify-content: center; /* Centraliza ícone e texto */
+            align-items: center; /* Centraliza verticalmente */
+            gap: 10px; /* Espaço entre ícone do botão e texto */
+            margin-top: 10px; /* Espaço acima do botão */
+        }
+
+        .btn-submit:hover { /* Quando o mouse está em cima do botão */
+            background-color: var(--cor-primaria-hover); /* Fica com a cor rosa mais escura */
+        }
+
+        .security-notice { /* O avisinho de privacidade com cadeado no final do formulário */
+            display: flex; /* Para colocar cadeado e texto lado a lado */
+            align-items: flex-start; /* Alinha pelo topo */
+            gap: 10px; /* Espaço entre ícone e texto */
+            margin-top: 20px; /* Espaço acima do aviso */
+            font-size: 0.8rem; /* Letra miúda */
+            color: var(--cor-texto-claro); /* Texto cor cinza claro */
+        }
+
+        .security-notice i { /* Ícone do cadeado */
+            margin-top: 2px; /* Pequeno ajuste de altura do cadeado pra alinhar com o texto */
+        }
+
+        
+        /* ================= INFORMAÇÕES DE CONTATO (ATUALIZADO) ================= */
+        .contact-info { 
+            background-color: #fbf0f2; 
+            border-radius: 15px; 
+            padding: 50px; 
+            margin: 40px 5% 60px 5%; 
+            max-width: 1000px; /* Reduzido para aproximar mais o conteúdo */
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        .contact-title-wrapper { 
+             text-align: center; /* Centraliza o título igual na imagem */
+             margin-bottom: 40px; 
+        }
+
+        .contact-title { 
+            font-family: var(--fonte-titulo); 
+            font-size: 2rem; 
+            color: var(--cor-primaria); 
+            margin-bottom: 5px; 
+        }
+
+        .contact-layout { /* Novo layout com Flexbox (Esquerda Logo, Direita Contatos) */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px; /* Espaço entre a logo e o texto */
+            flex-wrap: wrap; /* Permite quebrar linha no celular */
+        }
+
+        .contact-logo-area { /* Área reservada para a sua logo */
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            justify-content: center; /* Centraliza a logo no seu espaço */
+        }
+
+        .contact-logo-img { /* Estilo da imagem da logo */
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Canto levemente arredondado se a logo for quadrada */
+        }
+
+        .contact-list { /* Coluna onde ficam os textos empilhados */
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column; /* Empilha os contatos verticalmente */
+            gap: 30px; /* Espaço entre endereço, zap e telefone */
+        }
+
+        .contact-item { 
+            display: flex; 
+            align-items: center; /* Alinha o ícone com o texto lateralmente */
+            gap: 20px; 
+        }
+
+        .contact-icon { 
+            font-size: 1.8rem; 
+            color: var(--cor-primaria); 
+        }
+
+        .contact-text h4 { /* Subtítulos (WHATSAPP, NOSSO ENDEREÇO) */
+            font-size: 0.8rem; 
+            color: var(--cor-texto-claro); 
+            text-transform: uppercase; /* Deixa tudo maiúsculo igual na imagem */
+            letter-spacing: 1px;
+            margin-bottom: 5px; 
+        }
+
+        .contact-text p { /* Texto normal do telefone */
+            font-size: 1.1rem; 
+            color: var(--cor-texto-escuro); 
+            line-height: 1.4; 
+        }
+
+        .contact-text .destaque-endereco { /* Fonte especial pro endereço igual na imagem */
+            font-family: var(--fonte-titulo);
+            color: var(--cor-primaria);
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .footer-chique {
+            background-color: #a8475c; /* Um tom de vinho um pouco mais fechado e elegante */
+            color: #fff;
+            padding: 80px 5% 20px 5%;
+            font-family: var(--fonte-texto);
+            position: relative;
+        }
+
+        /* Um detalhe rosado super delicado no topo do rodapé */
+        .footer-chique::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #f3a6ad, #bb4b69, #f3a6ad); 
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        /* Linha delicada debaixo dos títulos do rodapé */
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #f3a6ad;
+        }
+
+        .footer-section p {
+            color: #ffe6eb;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-section i {
+            color: #f3a6ad; /* Ícones em rosa claro */
+            font-size: 1.1rem;
+        }
+
+        /* ----- Links Rápidos ----- */
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: #ffe6eb;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a i {
+            font-size: 0.7rem;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito chique: o link dá uma leve deslizada para a direita quando o mouse passa */
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(8px); 
+        }
+
+        .footer-links a:hover i {
+            color: #fff;
+        }
+
+        /* ----- Redes Sociais ----- */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            border: 1px solid #f3a6ad;
+            color: #f3a6ad;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a i {
+            margin: 0; 
+            color: inherit;
+        }
+
+        /* Efeito de preencher o botão e dar um "pulinho" pra cima */
+        .social-icons a:hover {
+            background-color: #f3a6ad;
+            color: #a8475c;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ----- Copyright e Frase Final ----- */
+        .footer-copy {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-copy p:first-child {
+            font-family: var(--fonte-detalhe); /* A fonte cursiva elegante */
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .footer-copy p:last-child {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--fonte-texto);
+        }
+
+        /* ================= RESPONSIVIDADE (Celulares) ================= */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%); /* Centraliza a linhazinha debaixo do título */
+            }
+
+            .footer-section p {
+                justify-content: center; /* Centraliza o texto e o ícone */
+            }
+
+            .footer-section p[style] {
+                margin-left: 0 !important; /* Arruma o espaçamento do "Brasil" */
+            }
+
+            .footer-links a {
+                justify-content: center;
+            }
+
+            .footer-links a:hover {
+                transform: translateY(-2px); /* Tira a deslizada lateral no celular */
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-copy p:first-child {
+                font-size: 1.8rem;
+            }
+        }

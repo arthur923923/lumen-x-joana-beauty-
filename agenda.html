@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>agenda</title>
+<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
+<html lang="pt-BR"> <!-- Inicia a tag HTML e define o idioma como Português do Brasil -->
+<head> <!-- Cabeçalho do documento, onde ficam metadados e links externos -->
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para suportar acentos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna a página responsiva para celulares -->
+    <title>Página de Agendamento Interativa - Joanas Beauty</title> <!-- Título que aparece na aba do navegador -->
     <link rel="stylesheet" href="./agenda.css">
+    <!-- Importando fontes do Google Fonts para ficar igual ao design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Pré-conecta ao servidor de fontes do Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Pré-conecta ao servidor de fontes estáticas -->
+    <!-- Importa a fonte Serif (Playfair Display) para títulos, Sans-serif (Lato) para textos, e Cursive (Great Vibes) para o rodapé -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Importando ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
-<body>
-    <header>
+<body> <!-- Início do corpo do documento, que vai mostrar o conteúdo -->
+<header>
         <div class="joa">
             <img src="./imagens/ChatGPT Image 19 de jun. de 2026, 20_12_40.png" alt="Logo">
         </div>
@@ -20,79 +25,247 @@
     <a href="./agenda.html">Agenda</a>
      </nav>
     </header>
-    <main>
-        <div class="banner"></div>
-
-<section class="titulo">
-    <h1>Agende seu horário</h1>
-    <p>Preencha os dados abaixo e solicite seu atendimento.</p>
-</section>
-
-<div class="container">
-
-    <div class="formulario">
-
-        <h2>Dados para agendamento</h2>
-
-        <div class="grupo">
-            <div class="campo">
-                <label>Nome Completo</label>
-                <input type="text">
+    <!-- SEÇÃO 1: BANNER PRINCIPAL -->
+    <section class="banner"> <!-- Container geral do banner -->
+        <div class="banner-content"> <!-- Lado esquerdo com os textos do banner -->
+            <h1>Agende seu<br>horário</h1> <!-- Título com quebra de linha (br) -->
+            <div class="banner-divider"> <!-- Detalhe visual de coração do banner -->
+                <i class="fa-solid fa-heart"></i> <!-- Ícone de coração preenchido do FontAwesome -->
             </div>
-            <div class="campo">
-                <label>WhatsApp</label>
-                <input type="tel">
-            </div>
+            <p>Escolha o melhor dia e horário para cuidar de você com todo o carinho que merece.</p> <!-- Subtítulo -->
         </div>
-        <div class="grupo">
-            <div class="campo">
-                <label>Data desejada</label>
-                <input type="date">
-            </div>
-            <div class="campo">
-                <label>Horário desejado</label>
-                <input type="time">
-            </div>
-        </div>
-        <div class="grupo">
-            <div class="campo">
-                <label>Serviço</label>
-                <select>
-                    <option>Corte Feminino</option>
-                    <option>Corte Masculino</option>
-                    <option>Escova</option>
-                    <option>Coloração</option>
-                    <option>Manicure</option>
-                    <option>Pedicure</option>
-                    <option>Barba</option>
-                </select>
-            </div>
-        </div>
-        <div class="campo">
-            <label>Observações</label>
-            <textarea placeholder="Digite alguma observação..."></textarea>
-        </div>
-        <br>
-        <div class="botao">
-            <button>Solicitar Agendamento</button>
-        </div>
-    </div>
-    <div class="info">
-        <h3>📍 Endereço</h3>
-        <p>
-            Rua Exemplo, 123 - Centro<br>
-            São Paulo - SP
-        </p>
-        <br>
-        <h3>📞 Contato</h3>
-        <p>
-            (11) 99999-9999
-        </p>
-    </div>
-</div>
+        <div class="banner-image"></div> <!-- Lado direito com a imagem de fundo (carregada via CSS) -->
+    </section>
 
-    </main>
+    <!-- SEÇÃO 2: ÁREA DE AGENDAMENTO (CALENDÁRIO E FORMULÁRIO) -->
+    <section class="main-section"> <!-- Limita a largura e adiciona espaçamentos na página -->
+        
+        <!-- Título geral da seção de agendamento -->
+        <div class="section-title-container">
+            <h2 class="section-title">Escolha sua data e horário</h2> <!-- Título principal do bloco -->
+            <div class="section-divider"><i class="fa-solid fa-heart"></i></div> <!-- Coração abaixo do título central -->
+        </div>
+
+        <div class="booking-grid"> <!-- Container Grid que divide em duas colunas (Esquerda e Direita) -->
+            
+            <!-- COLUNA ESQUERDA: CALENDÁRIO E HORÁRIOS -->
+            <div class="card"> <!-- Primeira caixa branca (Card do calendário) -->
+                
+                <!-- Cabeçalho do calendário -->
+                <div class="card-header">
+                    <i class="fa-regular fa-calendar-alt"></i> <!-- Ícone de calendário vazado -->
+                    <h3>Selecione a data</h3> <!-- Título -->
+                </div>
+
+                <!-- Navegação de Mês (Maio 2024 no exemplo) -->
+                <div class="calendar-nav">
+                    <i class="fa-solid fa-chevron-left"></i> <!-- Seta apontando pra esquerda (Mês anterior) -->
+                    <span id="mes-ano-texto">Julho 2026</span> <!-- Mês e ano atual com ID para o JS alterar -->
+                    <i class="fa-solid fa-chevron-right"></i> <!-- Seta apontando pra direita (Próximo mês) -->
+                </div>
+
+                <!-- Tabela dos dias do calendário -->
+                <div class="calendar-grid" id="calendario-dias">
+                    <!-- OBS: Os dias serão preenchidos DINAMICAMENTE pelo JavaScript agora para que o sistema funcione de verdade! -->
+                </div>
+
+                <!-- Cabeçalho da seleção de horários -->
+                <div class="card-header" style="margin-top: 40px;"> <!-- Coloquei uma margem no topo para separar do calendário -->
+                    <i class="fa-regular fa-clock"></i> <!-- Ícone de relógio vazado -->
+                    <h3>Horários disponíveis para o dia <span id="dia-selecionado-texto">...</span></h3> <!-- Texto dinâmico mudado pelo JS -->
+                </div>
+
+                <!-- Grid com os botões de botões de horário (Preenchidos pelo JS) -->
+                <div class="time-grid" id="grade-horarios">
+                    <!-- Os botões de horário vão aparecer aqui dinamicamente através do JavaScript dependendo do dia clicado! -->
+                </div>
+
+                <!-- Legenda que mostra o que as cores de botão significam -->
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="dot available"></div> <!-- Bolinha rosa -->
+                        <span>Disponível</span> <!-- Texto da legenda -->
+                    </div>
+                    <div class="legend-item">
+                        <div class="dot unavailable"></div> <!-- Bolinha cinza -->
+                        <span>Ocupado</span> <!-- Texto da legenda -->
+                    </div>
+                </div>
+            </div> <!-- FIM DA COLUNA ESQUERDA (CALENDÁRIO E HORÁRIOS) -->
+
+            <!-- COLUNA DIREITA: FORMULÁRIO DE DADOS DO CLIENTE -->
+            <div class="card"> <!-- Segunda caixa branca (Card de formulário) -->
+                
+                <!-- Cabeçalho do Formulário -->
+                <div class="card-header">
+                    <i class="fa-regular fa-user"></i> <!-- Ícone de bonequinho (usuário) -->
+                    <h3>Seus dados</h3> <!-- Título -->
+                </div>
+
+                <!-- Início do formulário HTML -->
+                <form id="form-agendamento">
+                    
+                    <!-- Campos invisíveis (Hidden) para guardar a Data e o Horário escolhidos e enviar no formulário -->
+                    <input type="hidden" id="input-data-escolhida" name="data_escolhida" required>
+                    <input type="hidden" id="input-horario-escolhido" name="horario_escolhido" required>
+
+                    <!-- Agrupamento do campo: Nome Completo -->
+                    <div class="form-group">
+                        <label for="nome">Nome completo</label> <!-- Rótulo para o usuário saber o que digitar -->
+                        <input type="text" id="nome" class="form-control" placeholder="Digite seu nome" required> <!-- Requerido -->
+                    </div>
+
+                    <!-- Agrupamento do campo: WhatsApp -->
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label> <!-- Rótulo do campo WhatsApp -->
+                        <input type="tel" id="whatsapp" class="form-control" placeholder="(11) 99999-9999" required> <!-- Requerido -->
+                    </div>
+
+                    <!-- Agrupamento do campo: E-mail -->
+                    <div class="form-group">
+                        <label for="email">E-mail (opcional)</label> <!-- Rótulo do e-mail -->
+                        <input type="email" id="email" class="form-control" placeholder="Digite seu e-mail"> 
+                    </div>
+
+                    <!-- Agrupamento do campo: Seleção de Serviço -->
+                    <div class="form-group">
+                        <label for="servico">Serviço desejado</label> <!-- Rótulo do menu suspenso -->
+                        <select id="servico" class="form-control" required>
+                            <option value="">Selecione o serviço</option> 
+                            <option value="Cabelo">Cabelo</option>
+                            <option value="Pedicure">Pedicure</option>
+                            <option value="Manicure">Manicure</option>
+                            <option value="Tratamentos">Tratamentos</option>
+                            <option value="Progressiva">Progressiva</option>
+                            <option value="Lavagem">Lavagem</option>
+                            <option value="Maquiagem">Maquiagem</option>
+                            <option value="Nail Art">Nail Art</option>
+                            <option value="">🔵</option>
+                            <option value="Corte Masculino">Corte Masculino</option>
+                            <option value="Barba">Barba</option>
+                            <option value="Sobrancelha">Sobrancelha</option>
+                            <option value="Hidrataçao">Hidrataçao</option>
+                            <option value="Combo Complete">Combo Complete</option>
+                        </select>
+                    </div>
+
+                    <!-- Agrupamento do campo: Observações (Texto grande) -->
+                    <div class="form-group">
+                        <label for="obs">Observações (opcional)</label> <!-- Rótulo -->
+                        <textarea id="obs" class="form-control" placeholder="Alguma observação especial?"></textarea> 
+                    </div>
+
+                    <!-- Botão final que envia as informações do formulário -->
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-regular fa-calendar-check"></i> <!-- Ícone de calendário com check dentro do botão -->
+                        Confirmar agendamento
+                    </button>
+
+                    <!-- Aviso pequeno abaixo do botão para tranquilizar cliente sobre dados -->
+                    <div class="security-notice">
+                        <i class="fa-solid fa-lock"></i> <!-- Ícone de cadeado de segurança -->
+                        <p>Seus dados estão protegidos e<br>serão utilizados apenas para confirmação<br>do agendamento.</p> 
+                    </div>
+                </form> <!-- Fim do formulário -->
+            </div> <!-- FIM DA COLUNA DIREITA -->
+
+        </div> <!-- FIM DO GRID DE AGENDAMENTO (AS DUAS CAIXAS) -->
+    </section> <!-- FIM DA SEÇÃO MAIN -->
+
     
-</body>
+    <!-- SEÇÃO 3: INFORMAÇÕES DE CONTATO EMBAIXO DA AGENDA (ATUALIZADA) -->
+    <section class="contact-info"> <!-- Faixa clarinha com as formas de contato -->
+        <div class="contact-title-wrapper"> <!-- Envolve título e coração -->
+            <h2 class="contact-title" style="text-align: center;">Meios de contato</h2> <!-- Título atualizado -->
+            <div class="section-divider" style="text-align: center;"><i class="fa-solid fa-heart"></i></div> <!-- Coração centralizado -->
+        </div>
 
-</html>
+        <div class="contact-layout"> <!-- Novo layout dividido (Esquerda/Direita) -->
+            
+            <!-- LADO ESQUERDO: Espaço da Logo -->
+            <div class="contact-logo-area">
+                <!-- Imagem da Logo. Coloquei um placeholder, basta você trocar o 'src' pelo link da sua foto/logo! -->
+                <img src="./imagens/ChatGPT Image 19 de jun. de 2026, 20_12_40.png" alt="Logo Joanas Beauty" class="contact-logo-img">
+            </div>
+
+            <!-- LADO DIREITO: Lista de Contatos Empilhados -->
+            <div class="contact-list">
+                
+                <!-- Contato 1: Endereço -->
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot contact-icon"></i>
+                    <div class="contact-text">
+                        <h4>Nosso Endereço</h4>
+                        <p class="destaque-endereco">Travessa das Araras, 6-321 - Tremembé,<br> São Paulo - SP, 02368-000</p>
+                    </div>
+                </div>
+
+                <!-- Contato 2: WhatsApp -->
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp contact-icon"></i>
+                    <div class="contact-text">
+                        <h4>WhatsApp</h4>
+                        <p><strong>+55 11 99535-7115</strong></p>
+                    </div>
+                </div>
+
+                <!-- Contato 3: Telefone Fixo -->
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone contact-icon"></i>
+                    <div class="contact-text">
+                        <h4>Instagram</h4>
+                        <p><strong>@Joanaeedivaldo</strong></p>
+                    </div>
+                </div>
+
+            </div> <!-- Fim da lista direita -->
+        </div> <!-- Fim do layout dividido -->
+    </section> <!-- Fim da seção de contatos -->
+
+    <footer class="footer-chique">
+        <div class="footer-container">
+  
+          <div class="footer-section">
+            <h3>Localização</h3>
+            <p  style="text-align: center;"><i class="fa-solid fa-map-location-dot"></i> Travessa das Araras, 6-321 <br> - Tremembé,<br> São Paulo - SP, 02368-000</p>
+            </div>
+  
+          <div class="footer-section">
+            <h3>Fale Conosco</h3>
+            <p><i class="fa-brands fa-whatsapp"></i> +55 11 99535-7115</p>
+            <p><i class="fa-regular fa-envelope"></i> contato@joanasbeauty.com</p>
+            
+            <div class="social-icons">
+              <a href="https://instagram.com/Joanaeedivaldo" target="_blank" title="Instagram">I</i></a>
+              <a href="https://wa.me/5511995357115" target="_blank" title="WhatsApp">w</a>
+            </div>
+          </div>
+  
+          <div class="footer-section">
+            <h3>Acesso Rápido</h3>
+            <div class="footer-links">
+                <a href="./index.html"><i class="fa-solid fa-angle-right"></i> Início</a>
+                <a href="./sobre.html"><i class="fa-solid fa-angle-right"></i>sobre</a>
+                <a href="./serviços.html"><i class="fa-solid fa-angle-right"></i> serviços</a>
+                <a href="./agenda.html"><i class="fa-solid fa-angle-right"></i> agenda</a>
+            </div>
+          </div>
+  
+        </div>
+  
+        <div class="footer-copy">
+          <p>Sua beleza, seu tempo, seu momento. <i class="fa-solid fa-heart" style="color: #f3a6ad;"></i></p>
+          <p>&copy; 2026 Joanas Beauty. Todos os direitos reservados.</p>
+        </div>
+      </footer>
+
+
+
+    <!-- ============================================================ -->
+    <!-- SCRIPT JAVASCRIPT: SISTEMA DE CONTROLE DINÂMICO DE HORÁRIOS -->
+    <!-- ============================================================ -->
+    <script src="./main.js">
+        
+    </script> <!-- Fim do código Javascript -->
+</body> <!-- Fim do corpo do html -->
+</html> <!-- Fim do arquivo HTML -->

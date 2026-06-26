@@ -220,3 +220,318 @@ h2 {
     color: #b76b73;
     line-height: 50px;
 }
+
+/* =======================================================
+   RESPONSIVIDADE PARA CELULARES E TABLETS (MEDIA QUERIES)
+   ======================================================= */
+
+/* Quando a tela for menor que 1024px (Tablets) */
+@media (max-width: 1024px) {
+    #container-historia {
+        flex-direction: column; /* Coloca as colunas de história uma embaixo da outra */
+        align-items: center;
+        gap: 40px;
+    }
+
+    .medio-historia {
+        width: 100%; /* Permite que ocupe a tela toda */
+        max-width: 600px; /* Mas não deixa ficar gigante demais */
+        padding-right: 0;
+    }
+
+    .medio {
+        border-right: none; /* Tira a borda rosa lateral porque agora eles estão empilhados */
+        border-bottom: solid 3px pink; /* Coloca a borda embaixo para separar */
+        padding-bottom: 40px;
+    }
+
+    #container-finalHISTORIA {
+        flex-direction: column; /* Empilha os valores, a foto e a citação */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .containerpequeno-finalHISTORIA {
+        width: 100%; /* Ocupa a tela toda */
+    }
+
+    .final-historia {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .final-img {
+        float: none; /* Tira o float para a imagem ficar no centro */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .containerpequeno-finalHISTORIA:last-child {
+        text-align: center; /* Centraliza a citação */
+    }
+}
+
+/* Quando a tela for menor que 768px (Celulares) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Coloca a logo em cima e o menu embaixo */
+        padding: 20px;
+        gap: 20px;
+    }
+
+    nav ul {
+        flex-wrap: wrap; /* Deixa os itens do menu pularem de linha se precisar */
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 24px; /* Diminui a letra do menu no celular */
+    }
+
+    .banner2 {
+        padding: 30px 20px;
+        align-items: center; /* Centraliza o texto do banner no celular */
+        text-align: center;
+    }
+
+    #bannerP {
+        width: 100%; /* Ocupa 100% da tela no celular */
+    }
+
+    .banner2 h1 {
+        font-size: 50px; /* Diminui o título gigante de 100px para caber no celular */
+        padding-right: 0;
+        border-bottom: none; /* Tira a borda de baixo no celular para ficar mais clean */
+    }
+
+    .banner2 h2, .banner2 h3, .banner2 p {
+        text-align: center; /* Força tudo a ficar centralizado */
+        padding-right: 0;
+    }
+
+    .banner2 h3 {
+        font-size: 24px; /* Diminui o subtítulo */
+    }
+
+    h2 {
+        font-size: 32px; /* Título "Minha História" menor */
+    }
+
+    .hidtoria-pequeno h3 {
+        font-size: 22px;
+    }
+
+    .hidtoria-pequeno p {
+        font-size: 16px;
+    }
+
+    #imgfinalH img {
+        width: 100%; /* A foto no final ocupa a largura total da tela, mas nunca vaza */
+        max-width: 320px;
+    }
+    
+    .containerpequeno-finalHISTORIA:last-child p {
+        font-size: 50px; /* Aspas menores */
+    }
+    
+    .containerpequeno-finalHISTORIA:last-child h3 {
+        font-size: 24px; /* Texto da citação menor e mais agradável de ler */
+        line-height: 35px;
+    }
+}
+.footer-chique {
+            background-color: #a8475c; /* Um tom de vinho um pouco mais fechado e elegante */
+            color: #fff;
+            padding: 80px 5% 20px 5%;
+            font-family: var(--fonte-texto);
+            position: relative;
+        }
+
+        /* Um detalhe rosado super delicado no topo do rodapé */
+        .footer-chique::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #f3a6ad, #bb4b69, #f3a6ad); 
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        /* Linha delicada debaixo dos títulos do rodapé */
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #f3a6ad;
+        }
+
+        .footer-section p {
+            color: #ffe6eb;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-section i {
+            color: #f3a6ad; /* Ícones em rosa claro */
+            font-size: 1.1rem;
+        }
+
+        /* ----- Links Rápidos ----- */
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: #ffe6eb;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a i {
+            font-size: 0.7rem;
+            margin: 0;
+            transition: transform 0.3s ease;
+        }
+
+        /* Efeito chique: o link dá uma leve deslizada para a direita quando o mouse passa */
+        .footer-links a:hover {
+            color: #fff;
+            transform: translateX(8px); 
+        }
+
+        .footer-links a:hover i {
+            color: #fff;
+        }
+
+        /* ----- Redes Sociais ----- */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            border: 1px solid #f3a6ad;
+            color: #f3a6ad;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons a i {
+            margin: 0; 
+            color: inherit;
+        }
+
+        /* Efeito de preencher o botão e dar um "pulinho" pra cima */
+        .social-icons a:hover {
+            background-color: #f3a6ad;
+            color: #a8475c;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ----- Copyright e Frase Final ----- */
+        .footer-copy {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-copy p:first-child {
+            font-family: var(--fonte-detalhe); /* A fonte cursiva elegante */
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .footer-copy p:last-child {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: var(--fonte-texto);
+        }
+
+        /* ================= RESPONSIVIDADE (Celulares) ================= */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 50px;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%); /* Centraliza a linhazinha debaixo do título */
+            }
+
+            .footer-section p {
+                justify-content: center; /* Centraliza o texto e o ícone */
+            }
+
+            .footer-section p[style] {
+                margin-left: 0 !important; /* Arruma o espaçamento do "Brasil" */
+            }
+
+            .footer-links a {
+                justify-content: center;
+            }
+
+            .footer-links a:hover {
+                transform: translateY(-2px); /* Tira a deslizada lateral no celular */
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-copy p:first-child {
+                font-size: 1.8rem;
+            }
+        }
