@@ -39,6 +39,30 @@ nav a{
     background-size:cover;
     background-position:center;
 }
+.banner4{
+    background-image:url("./imagens/banner1.png");
+    background-size:cover;
+    background-position:center;
+}
+.banner4{
+    height:400px;
+    display:flex;
+    align-items:center;
+    padding:0 80px;
+    margin-top:1px;
+}
+.banner5{
+    background-image:url("./imagens/banner\ servicos\ comeco.png");
+    background-size:cover;
+    background-position:center;
+}
+.banner5{
+    height:500px;
+    display:flex;
+    align-items:center;
+    padding:0 80px;
+    margin-top:1px;
+}
 .banner3{
     background-image:url("./imagens/banner\ servico\ homem.png");
     background-size:cover;

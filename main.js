@@ -78,8 +78,8 @@
             inputHorarioOculto.value = ""; // Reseta o horário selecionado no formulário, pois trocou de dia
             
             // Atualiza os textos informativos na tela
-            textoDiaSelecionado.innerText = dia + "/05/2024"; // Altera o cabeçalho de horários com o dia clicado
-            inputDataOculta.value = dia + "/05/2024"; // Guarda a data no campo invisível para envio posterior
+            textoDiaSelecionado.innerText = dia + "/07/2026"; // Altera o cabeçalho de horários com o dia clicado
+            inputDataOculta.value = dia + "/07/2026"; // Guarda a data no campo invisível para envio posterior
 
             // Verifica se este dia tem dados customizados salvos na nossa 'agendaDona'
             let horariosDoDia = agendaDona[dia];
