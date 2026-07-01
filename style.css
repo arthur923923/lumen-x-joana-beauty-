@@ -3,6 +3,14 @@
     padding:0;
     box-sizing:border-box;
 }
+img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+    overflow-x:hidden;
+}
 header{
     display:flex;
     justify-content:space-between;
@@ -568,4 +576,112 @@ nav a{
 
 .btn-servico:hover{
     background:#a9444d;
+}
+@media (max-width:768px){
+
+header{
+    flex-direction:column;
+    padding:20px;
+    gap:20px;
+}
+
+nav{
+    width:100%;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+}
+
+nav a{
+    font-size:22px;
+}
+
+}
+@media (max-width:768px){
+
+.banner1,
+.banner2,
+.banner3,
+.banner4,
+.banner5{
+    height:auto;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.textos{
+    max-width:100%;
+}
+
+.textos h1{
+    font-size:38px;
+}
+
+.textos p{
+    font-size:18px;
+}
+
+.pedro{
+    font-size:32px;
+    padding:0;
+    text-align:center;
+}
+
+.pedro p{
+    width:100%;
+    font-size:18px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+    padding:20px;
+}
+
+.card-servico{
+    width:100%;
+    padding:25px;
+}
+
+.card-servico img{
+    width:100%;
+    height:auto;
+}
+
+.card-servico h3{
+    font-size:32px;
+}
+
+.card-servico p{
+    font-size:18px;
+}
+
+.cta{
+    padding:40px 20px;
+}
+
+.cta-content{
+    flex-direction:column;
+    text-align:center;
+    padding:30px;
+}
+
+.calendar{
+    font-size:60px;
+}
+
+.cta h2{
+    font-size:30px;
+}
+
+.titulo-servicos{
+    font-size:40px;
+}
+
+.subtitulo-servicos{
+    font-size:18px;
+}
+
 }
